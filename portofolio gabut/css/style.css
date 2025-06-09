@@ -1,0 +1,244 @@
+/* ==================================================
+   FILE CSS FINAL UNTUK WEBSITE PORTFOLIO
+   Mencakup semua gaya dan perubahan
+================================================== */
+
+/* --- 1. Reset & Pengaturan Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    padding: 2rem 0; /* Memberi sedikit ruang jika konten lebih tinggi dari layar */
+}
+
+/* --- 2. Kontainer Utama & Layout --- */
+.portfolio-container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-section {
+    flex-basis: 45%;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.content-section {
+    flex-basis: 55%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 3. Header, Logo, & Navigasi --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.logo .logo-highlight {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #000;
+    margin: 0 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* Style untuk link navigasi yang sedang aktif */
+nav a.active {
+    color: #000;
+    font-weight: 700;
+}
+
+/* --- 4. Efek Navigasi (Garis Bawah Merah) --- */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Garis bawah tidak muncul pada link yang aktif */
+nav a.active::after {
+    transform: scaleX(0);
+}
+
+
+/* --- 5. Konten Utama (Judul & Paragraf) --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    max-width: 450px;
+}
+
+.main-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+/* --- 6. GAYA-GAYA TOMBOL (Buttons) --- */
+
+/* Tombol 1: Latar Gelap (untuk halaman My Work) */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff;
+    color: #2c2c2c;
+    padding: 14px 28px;
+    border-radius: 50px;
+     border: 2px solid #4A3B23; /* Warna Hijau */
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: flex-start;
+}
+
+.cta-button:hover {
+    background-color: #4A3B23; 
+      color: #fff;
+    transform: translateY(-3px);
+}
+
+.cta-button span {
+    margin-left: 12px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover span {
+    transform: translateX(5px);
+}
+
+/* Tombol 2: Garis Tepi Hijau (untuk halaman About Me) */
+.cta-button-alt {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff;
+    color: #2c2c2c;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 2px solid #006400; /* Warna Hijau */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.cta-button-alt:hover {
+    background-color: #006400; /* Warna Hijau */
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.cta-button-alt span {
+    margin-left: 12px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button-alt:hover span {
+    transform: translateX(5px);
+}
+
+/* Tombol 3: Garis Tepi Coklat Gelap (khusus halaman Home) */
+.cta-button-dark-outline {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff;
+    color: #2c2c2c;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 2px solid #271C15; /* Warna Coklat Gelap */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.cta-button-dark-outline:hover {
+    background-color: #271C15; /* Warna Coklat Gelap */
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.cta-button-dark-outline span {
+    margin-left: 12px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button-dark-outline:hover span {
+    transform: translateX(5px);
+}
